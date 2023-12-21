@@ -1,0 +1,23 @@
+<odoo>
+
+    <menuitem name="Manajemen Konstruksi" id="menu_inventaris_root" sequence="10"/>
+
+<!--    <menuitem name="Faktur" id="menu_faktur_struk" parent= "menu_inventaris_root" sequence="10"/>-->
+
+    <menuitem name="Manajemen Inventaris" id="menu_inventaris_struk" parent= "menu_inventaris_root" sequence="10"/>
+
+<!--    <menuitem name="Lokasi" id="menu_lokasi" parent= "menu_inventaris_root" sequence="10"/>-->
+
+<!--    <menuitem name="Dasboard Manajemen Proyek" id="menu_manajemen_proyek_root" sequence="10"/>-->
+
+<!--    <menuitem name="Klien" id="menu_bagian_klien" parent= "menu_inventaris_root" sequence="20"/>-->
+
+<!--    <menuitem name="Jobdesk" id="menu_bagian_jobdesk" parent="menu_inventaris_root" sequence="30"/>-->
+
+    <menuitem name="Manajemen Proyek" id="menu_bagian_manaj_proyek" parent= "menu_inventaris_root" sequence="40"/>
+
+    <menuitem name="Manajemen Resiko" id="menu_bagian_resiko" parent= "menu_inventaris_root" sequence="40"/>
+
+
+
+</odoo>

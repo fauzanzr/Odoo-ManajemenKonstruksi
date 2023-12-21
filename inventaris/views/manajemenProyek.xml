@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_manajpro_manajproyek_form" model="ir.ui.view">
+      <field name="name">manajemen_proyek.manajproyek.form</field>
+      <field name="model">manajemen_proyek.manajproyek</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div>
+              <h1>
+                <field name="ref" readonly="1"/>
+              </h1>
+            </div>
+            <group>
+              <field name="namaKontruksi"/>
+              <field name="jenisKontruksi"/>
+              <field name="namaKlien_id"/>
+              <field name="tglMulai"/>
+              <field name="tglSelesai"/>
+              <field name="namaJobdesk_id" widget="many2many_tags"/>
+              <field name="catatan"/>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids"/>
+            <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_manajpro_manajproyek_tree" model="ir.ui.view">
+      <field name="name">manajemen_proyek.manajproyek.tree</field>
+      <field name="model">manajemen_proyek.manajproyek</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="ref"/>
+          <field name="namaKontruksi"/>
+          <field name="jenisKontruksi"/>
+          <field name="namaKlien_id"/>
+          <field name="tglMulai"/>
+          <field name="tglSelesai"/>
+          <field name="namaJobdesk_id"/>
+          <field name="catatan"/>
+        </tree>
+      </field>
+    </record>
+
+<!--    <record id="view_manajpro_manajProyek_search" model="ir.ui.view">-->
+<!--      <field name="name">manajemen_proyek.manajproyek.search</field>-->
+<!--      <field name="model">manajemen_proyek.manajproyek</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <search>-->
+<!--          <field name="namaKontruksi" filter_domain="['|', ('namaKontruksi', 'ilike', self), ('ref', 'ilike', self)]"/>-->
+<!--          <field name="jenisKontruksi"/>-->
+<!--          <field name="namaKlien_id"/>-->
+<!--          <field name="tglMulai"/>-->
+<!--          <field name="tglSelesai"/>-->
+<!--          <field name="namaJobdesk_id"/>-->
+<!--          <field name="catatan"/>-->
+<!--        </search>-->
+<!--      </field>-->
+<!--    </record>-->
+
+    <record id="action_manajpro_manpro" model="ir.actions.act_window">
+      <field name="name">Manajemen Proyek</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">manajemen_proyek.manajproyek</field>
+      <field name="view_mode">tree,form</field>
+<!--      <field name="context">{'search_default_filter_child':1}</field>-->
+<!--      <field name="search_view_id" ref="manejemenProyek.view_manajpro_manajProyek_search"/>-->
+    </record>
+    
+<!--    <menuitem name="Manajemen Proyek" id="menu_manaj_proyek" parent= "menu_manajemen_proyek_root" action="action_manajpro_manpro" sequence="10"/>-->
+
+          <menuitem name="Manajemen Proyek" id="menu_manaj_proyek" parent= "menu_bagian_manaj_proyek"
+              action="action_manajpro_manpro"
+              sequence="10"/>
+</odoo>

@@ -1,0 +1,71 @@
+<odoo>
+
+<record model="ir.ui.view" id="view_manajemen_resiko_form">
+      <field name="name">risk.risk.form</field>
+      <field name="model">risk.risk</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet>
+                  <group>
+                      <field name="idRisiko" />
+                    <field name="namaRisiko"/>
+                    <field name="deskripsiRisiko"/>
+                    <field name="dampakRisiko"/>
+                    <field name="penyebabRisiko"/>
+                  </group>
+              </sheet>
+          </form>
+
+          </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_manajemen_resiko_tree">
+      <field name="name">risk.risk.tree</field>
+      <field name="model">risk.risk</field>
+      <field name="arch" type="xml">
+          <tree>
+                    <field name="idRisiko" />
+                    <field name="namaRisiko"/>
+                    <field name="deskripsiRisiko"/>
+                    <field name="dampakRisiko"/>
+                    <field name="penyebabRisiko"/>
+              
+
+          </tree>
+
+          </field>
+    </record>
+
+            <record model="ir.actions.act_window" id="action_manajemen_resiko">
+      <field name="name">Resiko</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">risk.risk</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+            <menuitem name="Resiko" id="menu_resiko" parent= "menu_bagian_resiko"
+              action="action_manajemen_resiko"
+              sequence="10"/>
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+
+</odoo>

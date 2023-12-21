@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template id="report_inventaris">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <style>
+                    body {
+                        margin: 20px;
+                    }
+                    h2{
+                        margin-bottom: 10px;
+                        text-align: center;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 20px;
+                    }
+                    th, td {
+                        border: 1px solid black;
+                        padding: 5px;
+                        text-align: left;
+                    }
+                </style>
+                <t t-foreach="docs" t-as="doc">
+                    <h2><span t-field="doc.name"/></h2>
+                    <p>Checking Code: <span t-field="doc.ref"/></p>
+                    <p>Tanggal: <span t-field="doc.tanggal"/></p>
+                    <h3>INVENTARIS :</h3>
+                    <table>
+                        <tr>
+                            <td>Code</td>
+                            <td>Nama Bahan</td>
+                            <td>Catatan</td>
+                        </tr>
+                        <tr>
+                            <td><span t-field="doc.inventaris_ref"/></td>
+                            <td><span t-field="doc.inventaris_bahan"/></td>
+                            <td><span t-field="doc.inventaris_notes"/></td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </table>
+
+                    <p>Total Harga (Dalam Rp.): <span t-field="doc.harga"/></p>
+                    <p>Supplier: <span t-field="doc.supplier"/></p>
+                    <p>Alamat Penyimpanan: <span t-field="doc.lokasi_alamat"/></p>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+<!--<odoo>-->
+<!--    <template id="report_inventaris">-->
+<!--        <t t-call="web.external_layout">-->
+<!--            <t t-call="web.html_container">-->
+<!--                <style>-->
+<!--                    body {-->
+<!--                        margin: 20px;-->
+<!--                    }-->
+<!--                    h1, h3{-->
+<!--                        margin-bottom: 10px;-->
+<!--                    }-->
+<!--                </style>-->
+<!--                <t t-foreach="docs" t-as="doc">-->
+<!--                    <h1><span t-field="doc.name"/></h1>-->
+<!--                    <h3>Checking Code: <span t-field="doc.ref"/></h3>-->
+<!--                    <p><span t-field="doc.inventaris_ref"/></p>-->
+<!--                    <p><span t-field="doc.inventaris_bahan"/></p>-->
+<!--                    <p><span t-field="doc.inventaris_notes"/></p>-->
+<!--                    <p>Tanggal: <span t-field="doc.tanggal"/></p>-->
+<!--                    <p>Total Harga (Dalam Rp.): <span t-field="doc.harga"/></p>-->
+<!--                    <p>Supplier: <span t-field="doc.supplier"/></p>-->
+<!--                    <p>Alamat Penyimpanan: <span t-field="doc.lokasi_alamat"/></p>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </template>-->
+<!--</odoo>-->
+
+<!--<odoo>-->
+<!--    <template id="report_inventaris">-->
+<!--        <t t-call="web.external_layout">-->
+<!--        <t t-call="web.html_container">-->
+<!--            <t t-foreach="docs" t-as="doc">-->
+<!--                <h1>Faktur: <span t-field="doc.name"/></h1>-->
+<!--                <h2>Checking Code: <span t-field="doc.ref"/></h2>-->
+<!--                <h2>Inventaris: <span t-field="doc.inventaris_ids"/></h2>-->
+<!--                <h3>Tanggal: <span t-field="doc.tanggal"/></h3>-->
+<!--                <h3>Total Harga (Dalam Rp.): <span t-field="doc.harga"/></h3>-->
+<!--                <h3>Supplier: <span t-field="doc.supplier"/></h3>-->
+<!--                <h3>Alamat Penyimpanan: <span t-field="doc.lokasi_alamat"/></h3>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--        </t>-->
+<!--    </template>-->
+<!--</odoo>-->
+
+
+    <!--                <div class="page">-->
+<!--                    <h2>Faktur: <span t-field="doc.name"/></h2>-->
+<!--                    <p>Total Harga (Dalam Rp.): <span t-field="doc.harga"/></p>-->
+<!--                    <p>Supplier: <span t-field="doc.supplier"/></p>-->
+<!--                    <p>Tanggal Pembuatan Struk: <span t-field="doc.tanggal"/></p>-->
+<!--                    <p>Code Inventaris: <span t-field="doc.ref"/></p>-->
+<!--                    <p>ID Inventaris: <span t-field="doc.lokasi_id.name"/></p>-->
+<!--                    <p>Alamat: <span t-field="doc.lokasi_alamat"/></p>-->
+<!--                </div>-->
+

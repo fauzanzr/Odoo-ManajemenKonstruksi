@@ -1,0 +1,85 @@
+<odoo>
+
+<record model="ir.ui.view" id="view_inventaris_bahan_form">
+      <field name="name">inventaris.inventaris.form</field>
+      <field name="model">inventaris.inventaris</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet>
+                  <div class="oe_title">
+                      <h1>
+                          <field name="ref" readonly="1"/>
+                      </h1>
+
+                  </div>
+                  <group>
+                      <field name="name"/>
+                      <field name="Kuantitas"/>
+                      <field name="notes"/>
+                      <field name="tanggal"/>
+                      <field name="faktur_id"/>
+                      <field name="capitalized_name"/>
+                  </group>
+              </sheet>
+              <div class="oe_chatter">
+                  <field name="message_follower_ids"/>
+                  <field name="message_ids" options="{'post_resfresh': 'recipients'}"/>
+
+              </div>
+          </form>
+
+          </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_inventaris_bahan_tree">
+      <field name="name">inventaris.inventaris.tree</field>
+      <field name="model">inventaris.inventaris</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="ref"/>
+              <field name="name"/>
+              <field name="capitalized_name"/>
+              <field name="Kuantitas2"/>
+              <field name="notes"/>
+              <field name="tanggal"/>
+              <field name="faktur_id"/>
+              
+
+          </tree>
+
+          </field>
+    </record>
+
+            <record model="ir.actions.act_window" id="action_inventaris_bahan">
+      <field name="name">List Bahan Konstruksi</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">inventaris.inventaris</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Bahan Konstruksi" id="menu_bahan" parent= "menu_inventaris_struk"
+              action="action_inventaris_bahan"
+              sequence="10"/>
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+
+</odoo>

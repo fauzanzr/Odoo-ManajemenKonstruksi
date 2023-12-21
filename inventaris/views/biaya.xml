@@ -1,0 +1,58 @@
+<odoo>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="produksi_view_tree">
+      <field name="name">biaya.models.tree</field>
+      <field name="model">biaya.models</field>
+      <field name="arch" type="xml">
+        <tree string="Daftar Analisis biaya">
+          <field name="id_laporan"/>
+          <field name="ringkasan_biaya"/>
+          <field name="jumlah_total_biaya"/>
+          <field name="catatan"/>
+        </tree>
+      </field>
+    </record>
+
+<!--    &lt;!&ndash; membuat form kegiatan &ndash;&gt;-->
+
+    <record model="ir.ui.view" id="produksi_view_form">
+      <field name="name">biaya.models.form</field>
+      <field name="model">biaya.models</field>
+      <field name="arch" type="xml">
+        <form string="Catatan biaya">
+          <sheet>
+            <group>
+              <field name="id_laporan"/>
+          <field name="ringkasan_biaya"/>
+          <field name="jumlah_total_biaya"/>
+          <field name="catatan"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--    &lt;!&ndash; Membuat Action &ndash;&gt;-->
+
+    <record model="ir.actions.act_window" id="produksi_action">
+      <field name="name">Analisis Biaya</field>
+      <field name="res_model">biaya.models</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p name="o_view_nocontent_smiling_face">
+          Daftar biaya Masih Kosong
+        </p>
+      </field>
+    </record>
+
+    <!-- Membuat menu dashboard -->
+<!--    <menuitem id="menu_dashboard_produksi_odoo" name="Analisis Biaya" parent= "menu_inventaris_root" />-->
+
+    <!-- Membuat menu bar kegiatan -->
+    <menuitem id="menu_bar_produksi_odoo" name="Analisis Biaya" parent="menu_inventaris_root"/>
+
+    <!-- Membuat menu item kegiatan -->
+    <menuitem id="menu_item_produksi_odoo" name="Biaya" parent="menu_bar_produksi_odoo" action="produksi_action"/>
+
+</odoo>
